@@ -441,6 +441,19 @@ index 57eef5e173494cd7b73dac5be76282636e9d1d2a..d852095bf8b943e61d988d94aa51217a
      private final long[] lastChunkPos = new long[2];
      private final ChunkAccess[] lastChunk = new ChunkAccess[2]; // Paper
  
+diff --git a/src/main/java/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java b/src/main/java/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java
+index dfb437409a9f49c26e06201de370661522b9f23c..ee6990b45ac203b81b9eda56077ccff7c2147c42 100644
+--- a/src/main/java/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java
++++ b/src/main/java/net/minecraft/world/level/saveddata/maps/MapItemSavedData.java
+@@ -477,7 +477,7 @@ public class MapItemSavedData extends SavedData {
+ 
+         // Paper start
+         private void addSeenPlayers(java.util.Collection<MapDecoration> icons) {
+-            org.bukkit.entity.Player player = (org.bukkit.entity.Player) player.getBukkitEntity();
++            org.bukkit.entity.Player player = (org.bukkit.entity.Player) this.player.getBukkitEntity();
+             MapItemSavedData.this.decorations.forEach((name, mapIcon) -> {
+                 // If this cursor is for a player check visibility with vanish system
+                 org.bukkit.entity.Player other = org.bukkit.Bukkit.getPlayerExact(name); // Spigot
 diff --git a/src/main/java/net/minecraft/world/level/storage/LevelData.java b/src/main/java/net/minecraft/world/level/storage/LevelData.java
 index 186aadca3b73c11a68c5e9ab6bfb0a2c592e6752..ed204eb6c36585b89fdad469e065edf16da1130f 100644
 --- a/src/main/java/net/minecraft/world/level/storage/LevelData.java
