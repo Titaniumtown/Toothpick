@@ -110,7 +110,7 @@ fun initRemappingTasks(project: Project, toothPick: ToothPickExtension): List<Ta
                 ensureSuccess(cmd("git", "clone", paper.absolutePath, remapped.absolutePath, directory = projectDirectory))
             }
 
-            ensureSuccess(cmd("git", "am", "--3way", projectDirectory.resolve("toothpick/preremapping.patch").absolutePath, directory = paper))
+            // ensureSuccess(cmd("git", "am", "--3way", projectDirectory.resolve("toothpick/preremapping.patch").absolutePath, directory = paper))
 
             if (Files.isDirectory(outputDir)) {
                 outputDir.toFile().deleteRecursively()
